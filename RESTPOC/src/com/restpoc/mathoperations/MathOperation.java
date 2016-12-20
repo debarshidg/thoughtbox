@@ -19,22 +19,20 @@ public class MathOperation {
 		System.out.println("enter addNumbers");
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("SUM", 10);
-		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n"
-				+ jsonObject;
+		String result = jsonObject.toString();
 		return Response.status(200).entity(result).build();
 	}
 
 	@Path("{f}/{y}/{z}")
 	@GET
-	@Produces("application/json")
+	@Produces("application/text")
 	public Response mathOperation(@PathParam("f") float f,
 			@PathParam("y") float y, @PathParam("y") float z)
 			throws JSONException {
 		System.out.println("enter addNumbers" + f + "" + y + "" + z);
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("SUM", f + y + z);
-		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n"
-				+ jsonObject;
+		String result = jsonObject.toString();
 		return Response.status(200).entity(result).build();
 	}
 	@POST
@@ -43,7 +41,8 @@ public class MathOperation {
 	public Response mathOperationPost(String msg)throws JSONException {
 		System.out.println("Param " + msg);
 		JSONObject jsonObject = new JSONObject();
-		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n"
+		jsonObject.put("param", msg);
+		String result = "@Produces(\"application/json\") Output5: \n\nF to C Converter Output: \n\n"
 				+ jsonObject;
 		return Response.status(200).entity(result).build();
 	}	

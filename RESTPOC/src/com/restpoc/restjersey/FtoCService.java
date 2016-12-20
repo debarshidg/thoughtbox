@@ -22,7 +22,7 @@ public class FtoCService {
 		jsonObject.put("F Value", fahrenheit); 
 		jsonObject.put("C Value", celsius);
  
-		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n" + jsonObject;
+		String result = "@Produces(\"application/json\") Output3: \n\nF to C Converter Output: \n\n" + jsonObject;
 		return Response.status(200).entity(result).build();
 	  }
  
@@ -37,7 +37,7 @@ public class FtoCService {
 		jsonObject.put("F Value", f); 
 		jsonObject.put("C Value", celsius);
  
-		String result = "@Produces(\"application/json\") Output: \n\nF to C Converter Output: \n\n" + jsonObject;
+		String result = "@Produces(\"application/json\") Output4: \n\nF to C Converter Output: \n\n" + jsonObject;
 		return Response.status(200).entity(result).build();
 	  }
 }
