@@ -13,11 +13,20 @@ public class RESTClient {
         System.out.println("responseGet: " + responseGet);
         
         JSONObject sampleData = new JSONObject();
-        sampleData.put("key", "ABC");
+        sampleData.put("key1", "ABC");
+        sampleData.put("key2", "DEF");
         
         WebResource resourcePost = c.resource("http://localhost:8080/RESTPOC/restpoc/mathOperation/post");
         String responsePost = resourcePost.post(String.class, sampleData.toString());
         System.out.println("responsePost: " + responsePost);
+        
+        WebResource resourcePostJAXB = c.resource("http://localhost:8080/RESTPOC/restpoc/employee/999/xml");
+        String responseJAXB = resourcePostJAXB.get(String.class);
+        System.out.println("responseJAXB: " + responseJAXB);
+        
+        WebResource resourcePostJAXBJSON = c.resource("http://localhost:8080/RESTPOC/restpoc/employee/999/json");
+        String responseJAXBJSON = resourcePostJAXBJSON.get(String.class);
+        System.out.println("responseJAXBJSON: " + responseJAXBJSON);
         
     }
 }
